@@ -12,12 +12,12 @@
 
 </ion-header>
 
-<!--
-<ion-content padding>
-  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+<ion-content padding> 
+  <img  [src]="lastImage" *ngIf="lastImage">
+ <!-- <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">-->
   <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
 </ion-content>
--->
+
 
 <!--<ion-content >
     <ion-card>
@@ -28,14 +28,14 @@
         </ion-card-content>
       </ion-card>
 </ion-content>-->
-<ion-content >
+<!--<ion-content >
     <div class="gallery-button" text-center>
         <img [src]="imageSrc" />    
       <ion-icon name="images" on-tap="openGallery()"></ion-icon>
       <p>Choose a Photo</p>  
     </div>
       
-</ion-content>
+</ion-content>-->
 
 
 
