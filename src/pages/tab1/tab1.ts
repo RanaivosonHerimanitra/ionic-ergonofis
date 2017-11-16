@@ -18,9 +18,8 @@ table a partir de laquelle l user va selectionner une photo depuis sa galerie
   templateUrl: 'tab1.html',
 })
 export class Tab1Page {
-  private imageSrc: string;
-  public base64Image: string;
-  lastImage=null;
+ 
+  lastImage: string =null;
   /* injection de dependance de fonc native */
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public camera: Camera, 
@@ -32,33 +31,8 @@ export class Tab1Page {
               public platform: Platform, 
               public loadingCtrl: LoadingController) 
               {}
-              private openGallery (): void {
-                let cameraOptions = {
-                  sourceType:  this.camera.PictureSourceType.PHOTOLIBRARY,
-                  destinationType:  this.camera.DestinationType.FILE_URI,      
-                  quality: 100,
-                  targetWidth: 1000,
-                  targetHeight: 1000,
-                  encodingType:  this.camera.EncodingType.JPEG,      
-                  correctOrientation: true
-                }
               
-                this.camera.getPicture(cameraOptions)
-                  .then(file_uri => this.imageSrc = file_uri, 
-                  err => console.log(err));   
-              }
-              public takePicture2(){
-                this.camera.getPicture({
-                    destinationType: this.camera.DestinationType.DATA_URL,
-                    targetWidth: 100,
-                    targetHeight: 100
-                }).then((imageData) => {
-                  // imageData is a base64 encoded string
-                    this.base64Image = "data:image/jpeg;base64," + imageData;
-                }, (err) => {
-                    console.log(err);
-                });
-              }
+             
 public presentActionSheet() {
   let actionSheet = this.actionSheetCtrl.create({
   title: 'Select Image Source',
@@ -83,6 +57,9 @@ public presentActionSheet() {
   });
     actionSheet.present();
   }
+  /*
+  prend une image soit a partir de la camera , soit depuis la galerie
+  */
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
     let options = {
@@ -100,13 +77,7 @@ public presentActionSheet() {
       this.presentToast('Error while selecting image.');
     });
   }
-  // Create a new name for the image
-private createFileName() {
-  var d = new Date(),
-  n = d.getTime(),
-  newFileName =  n + ".jpg";
-  return newFileName;
-}
+  
  
 
  
