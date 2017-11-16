@@ -14,29 +14,8 @@
 
 <ion-content padding> 
   <img  [src]="lastImage" *ngIf="lastImage">
- <!-- <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">-->
-  <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+  <h3 [hidden]="lastImage !== null">Please Select Image or use the camera!</h3>
 </ion-content>
-
-
-<!--<ion-content >
-    <ion-card>
-        <ion-card-content>Hello World, this is my camera app
-          <button (click)="takePicture2()">Take a Picture</button>
-          Latest Picture:
-          <ion-img [src]="base64Image"  ></ion-img>
-        </ion-card-content>
-      </ion-card>
-</ion-content>-->
-<!--<ion-content >
-    <div class="gallery-button" text-center>
-        <img [src]="imageSrc" />    
-      <ion-icon name="images" on-tap="openGallery()"></ion-icon>
-      <p>Choose a Photo</p>  
-    </div>
-      
-</ion-content>-->
-
 
 
 <ion-footer>

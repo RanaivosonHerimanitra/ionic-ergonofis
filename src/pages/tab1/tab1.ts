@@ -89,7 +89,7 @@ public presentActionSheet() {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY      
+      sourceType: sourceType  
     }
    
     // Get the data of an image
