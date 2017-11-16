@@ -7,7 +7,7 @@
 
 N'oubliez pas `templateUrl: 'app.html'` et non  `template`
 
-# Implementation de certains fonctionnalites natives avec cordova:
+# Implementation de certaines fonctionnalites natives avec cordova:
 
 * File upload en utilisant soit la galerie soit la camera.
 
