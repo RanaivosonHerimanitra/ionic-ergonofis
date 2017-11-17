@@ -20,6 +20,10 @@ N'oubliez pas `templateUrl: 'app.html'` et non  `template`
 
 ## integration avec opencv sur node(windows):
 
-* telecharger puis installer [opencv2.4xx](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.13/opencv-2.4.13.4-vc14.exe/download)
+* Telecharger puis installer [opencv2.4xx](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.13/opencv-2.4.13.4-vc14.exe/download)
 
 * Suivre les [instructions] (http://peterbraden.github.io/node-opencv/) et installer  [VS Express 2013] (https://github.com/EQEmu/Server/wiki/Visual-Studio-Express-2013-for-Windows-Desktop)
+
+* Telecharger [Cmake](https://cmake.org/download/) et suivre les [instructions](https://perso.uclouvain.be/allan.barrea/opencv/cmake_config.html)
+
+* Suivre les instructions de [node-gyp](https://github.com/nodejs/node-gyp) 
