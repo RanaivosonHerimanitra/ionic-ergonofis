@@ -13,8 +13,12 @@
 </ion-header>
 
 <ion-content padding> 
-  <img  [src]="lastImage" *ngIf="lastImage">
+  <img id="imageId" (load)="openCVRead($event)" [src]="lastImage" *ngIf="lastImage">
   <h3 [hidden]="lastImage !== null">Please Select Image or use the camera!</h3>
+  <br>
+  <h3>Et le resultat d'opencv est:</h3>
+  <br>
+  <canvas [hidden]="isHidden" id="lastImageProcessed"> </canvas>
 </ion-content>
 
 

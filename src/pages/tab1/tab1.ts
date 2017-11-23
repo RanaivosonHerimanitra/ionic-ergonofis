@@ -1,3 +1,5 @@
+declare var cv:any;
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,
          ActionSheetController, ToastController, 
@@ -6,6 +8,8 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { Input } from '@angular/core/src/metadata/directives';
+import { DEFAULT_INTERPOLATION_CONFIG } from '@angular/compiler/src/ml_parser/interpolation_config';
 
 declare var cordova;
 /*
@@ -18,11 +22,13 @@ table a partir de laquelle l user va selectionner une photo depuis sa galerie
   templateUrl: 'tab1.html',
 })
 export class Tab1Page {
- 
-  lastImage: string =null;
+  
+  lastImage: string ="/assets/imgs/logo.png";
+  isHidden: boolean= true;
   /* injection de dependance de fonc native */
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public camera: Camera, 
+             
               public transfer: Transfer, 
               public file: File, 
               public filePath: FilePath, 
@@ -78,7 +84,19 @@ public presentActionSheet() {
     });
   }
   
- 
+   openCVRead(event) : void {
+  
+    var idAttr = event.srcElement.attributes.id;
+    let mat = cv.imread(idAttr.nodeValue);
+    console.log(mat.size());
+    //
+    console.log(cv.GaussianBlur);
+    cv.cvtColor(mat,mat ,cv.COLOR_RGB2RGBA);
+    this.isHidden= false;
+    cv.imshow('lastImageProcessed', mat);
+    mat.delete();
+  
+  }
 
  
 private presentToast(text) {
