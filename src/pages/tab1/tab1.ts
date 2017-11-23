@@ -5,7 +5,9 @@ import { IonicPage, NavController, NavParams,
 import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
-import { Camera } from '@ionic-native/camera';
+import {  Camera } from '@ionic-native/camera';
+
+
 
 declare var cordova;
 /*
@@ -23,6 +25,7 @@ export class Tab1Page {
   /* injection de dependance de fonc native */
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public camera: Camera, 
+             
               public transfer: Transfer, 
               public file: File, 
               public filePath: FilePath, 
@@ -30,7 +33,9 @@ export class Tab1Page {
               public toastCtrl: ToastController, 
               public platform: Platform, 
               public loadingCtrl: LoadingController) 
-              {}
+              {
+                
+              }
               
              
 public presentActionSheet() {
@@ -70,12 +75,23 @@ public presentActionSheet() {
     }
    
     // Get the data of an image
+    /*
     this.camera.getPicture(options).then((imagePath) => {
       this.lastImage= 'data:image/jpeg;base64,' +imagePath;
+      cv.readImage(imagePath, function(err, im){
+        if (err) {
+          return console.error(err);
+        } else {
+          console.log( "ok ca marche")
+        }
+        
+      })
      
     }, (err) => {
       this.presentToast('Error while selecting image.');
     });
+    */
+   
   }
   
  
@@ -94,6 +110,8 @@ private presentToast(text) {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Tab1Page');
+    //console.dir(tracking);
+  
   }
 
 }
