@@ -17,12 +17,15 @@ declare var cv;
 export class Tab2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(cv);
+   console.log(cv);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Tab2Page');
-   
+    //let mat = cv.imread("C:\Users\Herimanitra\ergonofis\www\assets\imgs\logo.png");
+    //console.log(mat);
+    //cv.imshow('canvasOutput', mat);
+    
   }
 
 }
